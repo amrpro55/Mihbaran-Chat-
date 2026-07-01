@@ -5,6 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Relative assets work both on a custom domain and under /repository-name/ on GitHub Pages.
+    base: './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
