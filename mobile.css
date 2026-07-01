@@ -152,6 +152,22 @@ button,
     height: var(--app-vh);
   }
 
+  #app_frame:has(#search_view) #app_sidebar_container,
+  #app_frame:has(#settings_view) #app_sidebar_container,
+  #app_frame:has(#profile_view) #app_sidebar_container,
+  #app_frame:has(#admin_panel_view) #app_sidebar_container {
+    display: none;
+  }
+
+  #app_frame:has(#search_view) #app_workspace_container,
+  #app_frame:has(#settings_view) #app_workspace_container,
+  #app_frame:has(#profile_view) #app_workspace_container,
+  #app_frame:has(#admin_panel_view) #app_workspace_container {
+    width: 100%;
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
   #chat_list_sidebar {
     width: 100%;
     border-right: 0;
