@@ -1,20 +1,13 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# محبران شات — نسخة النشر
 
-# Run and deploy your AI Studio app
+هذه نسخة إنتاجية جاهزة مكوّنة من ستة ملفات فقط.
 
-This contains everything you need to run your app locally.
+## النشر على GitHub Pages
 
-View your app in AI Studio: https://ai.studio/apps/ddac3646-391e-49f6-bf0e-3190c38185cd
+1. ارفع الملفات الستة إلى جذر المستودع، وليس داخل مجلد إضافي.
+2. افتح `Settings > Pages`.
+3. اختر `Deploy from a branch`.
+4. اختر فرع `main` والمجلد `/(root)`.
+5. اضغط `Save` وانتظر اكتمال النشر.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+لا تحذف `app.js` أو `app.css` أو `.nojekyll`. إعداد Firebase مضمّن داخل نسخة البناء، بينما قواعد Firestore موجودة في `firestore.rules` للرجوع إليها.
