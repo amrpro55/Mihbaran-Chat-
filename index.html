@@ -2,10 +2,22 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#09090b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f4f5" />
     <title>محبران شات</title>
     <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+    <script>
+      (() => {
+        const setAppHeight = () => {
+          document.documentElement.style.setProperty("--app-vh", `${window.innerHeight}px`);
+        };
+        setAppHeight();
+        window.addEventListener("resize", setAppHeight, { passive: true });
+        window.addEventListener("orientationchange", setAppHeight, { passive: true });
+        window.visualViewport?.addEventListener("resize", setAppHeight, { passive: true });
+      })();
+    </script>
     <script type="module" src="./app.js"></script>
   </head>
   <body>

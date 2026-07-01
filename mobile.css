@@ -1,0 +1,302 @@
+/* Mobile polish layer for Mihbaran Chat */
+:root {
+  --app-vh: 100dvh;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #f4f4f5;
+}
+
+body {
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font-size: 16px;
+}
+
+button,
+[role="button"],
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"] {
+  min-height: 40px;
+}
+
+#splash_screen,
+#auth_screen,
+#main_app_wrapper {
+  min-height: var(--app-vh);
+}
+
+#app_frame {
+  height: var(--app-vh);
+  max-height: var(--app-vh);
+}
+
+#chat_list_sidebar,
+#app_sidebar_container,
+#app_workspace_container,
+#chat_room_view,
+#settings_view,
+#profile_view,
+#admin_panel_view,
+#search_view {
+  min-height: 0;
+}
+
+#sidebar_chat_items,
+#chatroom_messages_scroll,
+#settings_view,
+#profile_view,
+#admin_panel_view,
+#search_view,
+#auth_screen {
+  -webkit-overflow-scrolling: touch;
+}
+
+#chatroom_messages_scroll {
+  scroll-padding-bottom: calc(92px + var(--safe-bottom));
+}
+
+#chatroom_input_bar {
+  padding-bottom: max(1rem, calc(.75rem + var(--safe-bottom)));
+}
+
+#chatroom_input_bar textarea,
+#chatroom_input_bar input {
+  max-height: 132px;
+}
+
+#admin_tabs,
+#chat_tabs,
+#settings_lang_toggles {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+#admin_tabs::-webkit-scrollbar,
+#chat_tabs::-webkit-scrollbar,
+#settings_lang_toggles::-webkit-scrollbar {
+  display: none;
+}
+
+#admin_tabs > button,
+#chat_tabs > button,
+#settings_lang_toggles > button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+#admin_tab_content_area,
+#admin_users_list_block,
+#admin_reports_list_block,
+#admin_audit_logs_block,
+#search_users_results,
+#search_messages_results {
+  min-width: 0;
+}
+
+#auth_card,
+#profile_content,
+#settings_content,
+#search_content {
+  width: min(100%, 28rem);
+}
+
+@media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    height: var(--app-vh);
+  }
+
+  #splash_screen,
+  #auth_screen,
+  #main_app_wrapper {
+    padding-left: max(1rem, var(--safe-left));
+    padding-right: max(1rem, var(--safe-right));
+  }
+
+  #app_frame {
+    width: 100vw;
+    height: var(--app-vh) !important;
+    max-height: var(--app-vh);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #app_sidebar_container,
+  #app_workspace_container {
+    height: var(--app-vh);
+  }
+
+  #chat_list_sidebar {
+    width: 100%;
+    border-right: 0;
+  }
+
+  #sidebar_header {
+    padding-top: max(1rem, calc(.75rem + var(--safe-top)));
+    gap: .75rem;
+  }
+
+  #sidebar_actions button,
+  #room_header_actions button,
+  #chat_room_back_btn,
+  #settings_back_btn,
+  #profile_back_btn,
+  #admin_back_btn,
+  #search_back_btn {
+    min-width: 40px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #chat_tabs {
+    padding-inline: .5rem;
+  }
+
+  #sidebar_chat_items {
+    padding-bottom: calc(5.75rem + var(--safe-bottom));
+  }
+
+  #sidebar_user_profile_bar {
+    padding-bottom: max(1rem, calc(.75rem + var(--safe-bottom)));
+  }
+
+  #chatroom_header {
+    padding-top: max(1rem, calc(.75rem + var(--safe-top)));
+  }
+
+  #chatroom_messages_scroll {
+    padding-inline: .75rem;
+  }
+
+  #chatroom_input_bar {
+    gap: .5rem;
+  }
+
+  #chatroom_input_bar form,
+  #chatroom_input_bar textarea,
+  #chatroom_input_bar input {
+    min-width: 0;
+  }
+
+  #auth_screen {
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding-top: max(1rem, calc(1rem + var(--safe-top)));
+    padding-bottom: max(1.5rem, calc(1rem + var(--safe-bottom)));
+  }
+
+  #auth_card {
+    margin-block: auto;
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  #auth_tabs button {
+    min-height: 44px;
+  }
+
+  #settings_view,
+  #profile_view,
+  #admin_panel_view,
+  #search_view {
+    padding: max(1rem, calc(.75rem + var(--safe-top))) 1rem max(1.25rem, calc(1rem + var(--safe-bottom)));
+  }
+
+  #admin_panel_view > div:first-child,
+  #settings_view > div:first-child,
+  #profile_view > div:first-child,
+  #search_view > div:first-child {
+    margin-bottom: 1rem;
+  }
+
+  #admin_panel_view h2,
+  #settings_view h2,
+  #profile_view h2,
+  #search_view h2 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  #admin_tabs {
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    gap: .25rem;
+  }
+
+  #admin_tabs button {
+    padding: .6rem .75rem;
+  }
+
+  #telemetry_stats_grid {
+    grid-template-columns: 1fr;
+  }
+
+  #broadcast_panel_block {
+    padding: 1rem;
+  }
+
+  #admin_users_search_box {
+    max-width: none;
+  }
+
+  #admin_users_list_block > div,
+  #admin_reports_list_block > div,
+  #admin_audit_logs_block > div {
+    border-radius: .875rem;
+  }
+
+  #search_content {
+    gap: 1.25rem;
+  }
+
+  #splash_header {
+    padding-top: var(--safe-top);
+  }
+}
+
+@media (max-width: 390px) {
+  #auth_card {
+    padding: 1rem;
+  }
+
+  #sidebar_header,
+  #chatroom_header,
+  #chatroom_input_bar {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+
+  #admin_tabs button,
+  #chat_tabs button {
+    font-size: .72rem;
+    padding-inline: .6rem;
+  }
+}
