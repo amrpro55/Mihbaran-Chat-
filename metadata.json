@@ -1,0 +1,6 @@
+{
+  "name": "Mihbaran Chat",
+  "description": "تطبيق دردشة احترافي متكامل باسم محبران شات بتصميم عصري وسريع وآمن، مع دعم كامل للغتين العربية والإنجليزية ورسائل مؤقتة ولوحة تحكم متقدمة.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
